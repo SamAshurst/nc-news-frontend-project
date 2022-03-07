@@ -7,3 +7,7 @@ const newsApi = axios.create({
 export function getUserByUsername(username) {
   return newsApi.get(`/users/${username}`).then(({ data: { user } }) => user);
 }
+
+export function getAllArticles() {
+  return newsApi.get("/articles").then(({ data: { articles } }) => articles);
+}

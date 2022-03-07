@@ -5,7 +5,8 @@ import * as api from "./utils/api";
 
 import "./App.css";
 
-import Home from "./components/Home";
+import Title from "./components/Title";
+import Homepage from "./components/Homepage";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState("");
@@ -20,9 +21,9 @@ function App() {
     <UserContext.Provider value={{ loggedInUser }}>
       <BrowserRouter>
         <div className="App">
-          <h1>Initial setup done</h1>
+          <Title />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Homepage />} />
           </Routes>
         </div>
       </BrowserRouter>
