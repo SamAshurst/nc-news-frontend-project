@@ -16,12 +16,12 @@ export default function Homepage() {
   const allArticlesList = articles.map((article) => {
     const articleCopy = { ...article };
     return (
-      <div key={articleCopy.article_id}>
-        <h2>{articleCopy.title}</h2>
-        <h4>{articleCopy.topic}</h4>
-        <p>By: {articleCopy.author}</p>
-        <p>{formatDate(articleCopy.created_at)}</p>
-      </div>
+      <ul key={articleCopy.article_id} className="article__list">
+        <h2 className="list__title">{articleCopy.title}</h2>
+        <h4 className="list__topic">{articleCopy.topic}</h4>
+        <p className="list__author">By: {articleCopy.author}</p>
+        <p className="list__date">{formatDate(articleCopy.created_at)}</p>
+      </ul>
     );
   });
 
@@ -29,8 +29,7 @@ export default function Homepage() {
 
   return (
     <main>
-      Homepage
-      <section>{allArticlesList}</section>
+      <section className="section__articles">{allArticlesList}</section>
     </main>
   );
 }
