@@ -1,3 +1,74 @@
 .App {
-  text-align: center;
+  text-align: left;
+  background-color: black;
+  color: white;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.header__title {
+  margin-bottom: 0px;
+  margin-top: 5px;
+  font-size: 5em;
+  padding-left: 5px;
+}
+
+.header__username {
+  text-align: right;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  padding-top: 40px;
+  padding-left: 5px;
+  font-size: 1.5em;
+}
+
+.main__articles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid #dfdfdf;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+@media only screen and (max-width: 768px) {
+  .main__articles {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+.article__list {
+  padding-left: 5px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border-top: 1px solid #dfdfdf;
+  border-bottom: 1px solid #dfdfdf;
+  border-right: 1px solid #dfdfdf;
+  border-left: 1px solid #dfdfdf;
+}
+
+.list__title {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.list__topic {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-size: 0.9em;
+  font-weight: lighter;
+}
+
+.list__author {
+  margin-bottom: 0px;
+}
+
+.list__date {
+  margin-bottom: 0px;
+  margin-top: 0px;
 }
