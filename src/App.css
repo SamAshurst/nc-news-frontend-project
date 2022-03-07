@@ -25,17 +25,17 @@ header {
   font-size: 1.5em;
 }
 
-.section__articles {
+.main__articles {
   display: grid;
   grid-template-columns: 1fr 1fr;
   border-top: 1px solid #dfdfdf;
   border-bottom: 1px solid #dfdfdf;
 }
 
-@media only screen and (max-width: 600px) {
-  .section__articles {
+@media only screen and (max-width: 768px) {
+  .main__articles {
+    display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: min-content auto;
   }
 }
 

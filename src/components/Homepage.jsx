@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import * as api from "../utils/api";
-import formatDate from "../utils/formatDate";
+import ArticleList from "./ArticleList";
+
 
 export default function Homepage() {
   const [articles, setArticles] = useState([]);
@@ -13,23 +14,13 @@ export default function Homepage() {
     });
   }, []);
 
-  const allArticlesList = articles.map((article) => {
-    const articleCopy = { ...article };
-    return (
-      <ul key={articleCopy.article_id} className="article__list">
-        <h2 className="list__title">{articleCopy.title}</h2>
-        <h4 className="list__topic">{articleCopy.topic}</h4>
-        <p className="list__author">By: {articleCopy.author}</p>
-        <p className="list__date">{formatDate(articleCopy.created_at)}</p>
-      </ul>
-    );
-  });
+
 
   if (loading) return <div>Loading...</div>;
 
   return (
-    <main>
-      <section className="section__articles">{allArticlesList}</section>
+    <main className="main__articles">
+      <ArticleList articles={articles}/>
     </main>
   );
 }
