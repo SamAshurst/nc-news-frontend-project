@@ -9,6 +9,7 @@ import Title from "./components/Title";
 import Nav from "./components/Nav";
 import Homepage from "./components/Homepage";
 import SingleTopic from "./components/SingleTopic";
+import SingleArticle from "./components/SingleArticle";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState("");
@@ -44,6 +45,10 @@ function App() {
             <Route
               path="/topics/:topic_slug"
               element={<SingleTopic articles={articles} loading={loading} />}
+            />
+            <Route
+              path="/articles/:article_id"
+              element={<SingleArticle loading={loading} />}
             />
           </Routes>
         </div>
