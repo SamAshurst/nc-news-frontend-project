@@ -8,6 +8,7 @@ export default function Homepage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
     api.getAllArticles().then((articles) => {
       setArticles(articles);
       setLoading(false);
