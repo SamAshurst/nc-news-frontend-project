@@ -17,28 +17,54 @@ header {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0px 10px 0px 10px;
+  border-bottom: 1px solid #777575;
+}
+
+button {
+  color: white;
+  padding: 0;
+  border: none;
+  background: none;
+  padding: 10px 10px 10px 10px;
 }
 
 .header__title {
-  margin-bottom: 0px;
-  margin-top: 5px;
+  margin: 0px 0px 0px 0px;
+  padding-right: 10px;
   font-size: 3.5em;
 }
 
 .header__username {
-  text-align: right;
-  margin: 5px 0px 10px 0px;
-  padding: 20px 0px 20px 5px;
+  margin: 0px 0px 0px 0px;
+  padding: 20px 0px 10px 10px;
   font-size: 1.1em;
+  border-left: 1px solid #777575;
 }
 
-.main__articles {
+.header__button {
+  padding: 10px 0px 10px 0px;
+  border: none;
+  background: none;
+  text-align: left;
+  border-right: 1px solid #777575;
+}
+
+.NavBar__main {
+  border-bottom: 1px solid #777575;
+}
+.NavBar-main-topics {
+  font-size: 0.9em;
+  padding-left: 10px;
+}
+
+.main__articles,
+.SingleTopic__articles {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 10px;
   row-gap: 15px;
   align-self: center;
-  padding: 30px 10px 0px 10px;
+  padding: 20px 10px 0px 10px;
 }
 
 .article__list {
@@ -93,7 +119,8 @@ header {
 }
 
 @media only screen and (max-width: 768px) {
-  .main__articles {
+  .main__articles,
+  .SingleTopic__articles {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: min-content auto;
@@ -110,5 +137,7 @@ header {
   .header__username {
     place-self: center;
     font-size: 0.8em;
+    border: none;
+    padding: 0px 0px 0px 10px;
   }
 }

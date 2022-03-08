@@ -6,14 +6,23 @@ import * as api from "./utils/api";
 import "./App.css";
 
 import Title from "./components/Title";
+import Nav from "./components/Nav";
 import Homepage from "./components/Homepage";
+import SingleTopic from "./components/SingleTopic";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState("");
+  const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     api.getUserByUsername("grumpy19").then((user) => {
       setLoggedInUser(user);
+    });
+    setLoading(true);
+    api.getAllArticles().then((articles) => {
+      setArticles(articles);
+      setLoading(false);
     });
   }, []);
 
@@ -22,8 +31,20 @@ function App() {
       <BrowserRouter>
         <div className="App">
           <Title />
+          <Nav />
           <Routes>
-            <Route path="/" element={<Homepage />} />
+            <Route
+              path="/"
+              element={<Homepage articles={articles} loading={loading} />}
+            />
+            <Route
+              path="/topics"
+              element={<Homepage articles={articles} loading={loading} />}
+            />
+            <Route
+              path="/topics/:topic_slug"
+              element={<SingleTopic articles={articles} loading={loading} />}
+            />
           </Routes>
         </div>
       </BrowserRouter>
