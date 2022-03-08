@@ -130,14 +130,34 @@ a {
   grid-area: date;
   margin: 0px 0px 0px 0px;
 }
+
+.single-article-title {
+  padding: 0px 10px 0px 10px;
+  margin-bottom: 0;
+}
+.single-article-topic {
+  padding: 0px 10px 0px 10px;
+  font-weight: 200;
+}
+.single-article-author {
+  padding: 0px 10px 0px 10px;
+  font-weight: 200;
+}
+.single-article-date {
+  padding: 0px 10px 0px 10px;
+  font-weight: 200;
+}
+.single-article-body {
+  padding: 0px 10px 0px 10px;
+}
+.single-article-votes {
+  padding: 0px 10px 0px 10px;
+  text-align: right;
+}
 .comments-button {
   display: block;
   margin-left: auto;
   margin-right: 0;
-}
-
-.single-article-votes {
-  text-align: right;
 }
 
 @media only screen and (max-width: 768px) {

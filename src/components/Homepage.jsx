@@ -6,7 +6,10 @@ export default function Homepage({articles, loading}) {
 
   return (
     <main className="main__articles">
-      <ArticleList key="ArticleList" articles={articles}/>
+      {articles.map((article)=>{
+        return <ArticleList key={article.article_id} article={article}/>
+      })}
+      
     </main>
   );
 }

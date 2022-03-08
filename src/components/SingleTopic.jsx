@@ -9,6 +9,7 @@ export default function SingleTopic({ articles, loading }) {
   useEffect(() => {
     setTopic(topic_slug);
   }, [topic_slug]);
+
   const filteredArticles = articles.filter((article) => {
     return article.topic === topic;
   });
@@ -17,7 +18,10 @@ export default function SingleTopic({ articles, loading }) {
   
   return (
     <main className="SingleTopic__articles">
-      <ArticleList articles={filteredArticles} />
+      {filteredArticles.map((article)=>{
+        return <ArticleList key={article.article_id} article={article} />
+      })}
+      
     </main>
   );
 }

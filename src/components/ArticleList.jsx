@@ -1,10 +1,8 @@
 import { Link } from "react-router-dom";
 import formatDate from "../utils/formatDate";
 
-export default function ArticleList ({articles}) {
-
-return articles.map((article) => {
-        const articleCopy = { ...article };
+export default function ArticleList ({article}) {
+        const articleCopy = {...article}
         return (
           <Link to={`/articles/${articleCopy.article_id}`}>
             <button className="article-list-button">
@@ -17,5 +15,5 @@ return articles.map((article) => {
           </button>
           </Link>
         );
-      });
+      
 }

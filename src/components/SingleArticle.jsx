@@ -26,9 +26,9 @@ export default function SingleArticle() {
 
   return (
     <main>
-      <h3 className="single-article-title">{title}</h3>
-      <dt className="single-article-author">{author}</dt>
+      <h2 className="single-article-title">{title}</h2>
       <dt className="single-article-topic">{topic}</dt>
+      <dt className="single-article-author">By: {author}</dt>
       <dt className="single-article-date">{formatDate(created_at)}</dt>
       <p className="single-article-body">{body}</p>
       <dt className="single-article-votes">Votes: {votes}</dt>
