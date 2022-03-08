@@ -6,7 +6,7 @@ export default function Homepage({articles, loading}) {
 
   return (
     <main className="main__articles">
-      <ArticleList articles={articles}/>
+      <ArticleList key="ArticleList" articles={articles}/>
     </main>
   );
 }

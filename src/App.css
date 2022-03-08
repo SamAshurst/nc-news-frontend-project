@@ -10,6 +10,7 @@ body {
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
+  background-color: black;
 }
 
 header {
@@ -128,6 +129,15 @@ a {
 .list__date {
   grid-area: date;
   margin: 0px 0px 0px 0px;
+}
+.comments-button {
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.single-article-votes {
+  text-align: right;
 }
 
 @media only screen and (max-width: 768px) {

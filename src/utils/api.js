@@ -11,3 +11,23 @@ export function getUserByUsername(username) {
 export function getAllArticles() {
   return newsApi.get("/articles").then(({ data: { articles } }) => articles);
 }
+
+export function getArticleByArticleId(id) {
+  return newsApi
+    .get(`/articles/${id}`)
+    .then(({ data: { article } }) => article);
+}
+
+export function getCommentsByArticleId(id) {
+  return newsApi
+    .get(`/articles/${id}/comments`)
+    .then(({ data: { comments } }) => {
+      return comments.sort(function (a, b) {
+        return a.created_at > b.created_at
+          ? -1
+          : a.created_at < b.created_at
+          ? 1
+          : 0;
+      });
+    });
+}
