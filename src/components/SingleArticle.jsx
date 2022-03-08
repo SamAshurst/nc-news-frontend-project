@@ -10,20 +10,20 @@ export default function SingleArticle() {
   const { article_id } = useParams();
 
   const [SelectedArticle, setSelectedArticle] = useState("");
-  const [comments, setComments] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     api.getArticleByArticleId(article_id).then((article) => {
       setSelectedArticle(article);
-    });
-    api.getCommentsByArticleId(article_id).then((comments) => {
-      setComments(comments);
+      setLoading(false);
     });
   }, [article_id]);
 
   const { title, author, body, comment_count, created_at, topic, votes } =
     SelectedArticle;
 
+  if (loading) return <div>Loading...</div>;
   return (
     <main>
       <h2 className="single-article-title">{title}</h2>
@@ -33,7 +33,7 @@ export default function SingleArticle() {
       <p className="single-article-body">{body}</p>
       <dt className="single-article-votes">Votes: {votes}</dt>
       <CollapseWrapper comment_count={comment_count}>
-        <Comments comments={comments} />
+        <Comments article_id={article_id} />
       </CollapseWrapper>
     </main>
   );

@@ -8,9 +8,9 @@ export default function ArticleList ({article}) {
             <button className="article-list-button">
           <ul className={`article__list article-${articleCopy.topic}`}>
             <h2 className="list__title">{articleCopy.title}</h2>
-            <h4 className="list__topic">{articleCopy.topic}</h4>
             <p className="list__author">By: {articleCopy.author}</p>
             <p className="list__date">{formatDate(articleCopy.created_at)}</p>
+            <h4 className="list__topic">{articleCopy.topic}</h4>
           </ul>
           </button>
           </Link>

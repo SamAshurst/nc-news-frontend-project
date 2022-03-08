@@ -1,7 +1,21 @@
-import formatDate from "../utils/formatDate";
+import { useState, useEffect } from "react";
 
-export default function Comments({ comments }) {
-  console.log(comments);
+import formatDate from "../utils/formatDate";
+import * as api from "../utils/api";
+
+export default function Comments({ article_id }) {
+  const [comments, setComments] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    api.getCommentsByArticleId(article_id).then((comments) => {
+      setComments(comments);
+    });
+    setLoading(false);
+  }, [article_id]);
+
+  if (loading) return <div>Loading...</div>;
   return comments.map((comment) => {
     return (
       <ul key={comment.comment_id} className="comment__list">
