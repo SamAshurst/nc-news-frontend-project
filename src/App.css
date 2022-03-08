@@ -17,7 +17,7 @@ header {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0px 10px 0px 10px;
-  border-bottom: 1px solid #777575;
+  border-bottom: 1px solid #4d4b4b;
 }
 
 button {
@@ -38,7 +38,7 @@ button {
   margin: 0px 0px 0px 0px;
   padding: 20px 0px 10px 10px;
   font-size: 1.1em;
-  border-left: 1px solid #777575;
+  border-left: 1px solid #4d4b4b;
 }
 
 .header__button {
@@ -46,11 +46,11 @@ button {
   border: none;
   background: none;
   text-align: left;
-  border-right: 1px solid #777575;
+  border-right: 1px solid #4d4b4b;
 }
 
 .NavBar__main {
-  border-bottom: 1px solid #777575;
+  border-bottom: 1px solid #4d4b4b;
 }
 .NavBar-main-topics {
   font-size: 0.9em;
@@ -70,10 +70,10 @@ button {
 .article__list {
   padding: 10px 10px 10px 5px;
   margin: 0px 0px 0px 0px;
-  border-top: 1px solid #777575;
-  border-bottom: 1px solid #777575;
-  border-right: 1px solid #777575;
-  border-radius: 8px;
+  border-top: 1px solid #4d4b4b;
+  border-bottom: 1px solid #4d4b4b;
+  border-right: 1px solid #4d4b4b;
+  border-radius: 4px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr auto;
