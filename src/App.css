@@ -152,15 +152,15 @@ a {
 }
 #vote-arrow-up,
 #vote-arrow-down {
-  display: flex;
-  align-items: right;
-  justify-content: right;
-  margin-right: 40px;
+  display: grid;
+  margin-left: auto;
+  margin-right: 20px;
+  padding: 0px 20px 0px 0px;
   -webkit-text-stroke: 0.1px;
-  color: #0e704e;
+  color: #0e704ea6;
 }
 #vote-arrow-down {
-  color: #973500;
+  color: #973500c4;
 }
 
 .comments-button {

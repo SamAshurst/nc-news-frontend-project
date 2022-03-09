@@ -31,3 +31,9 @@ export function getCommentsByArticleId(id) {
       });
     });
 }
+
+export function patchVotes(article_id, voteAmount) {
+  return newsApi
+    .patch(`/articles/${article_id}`, { inc_votes: voteAmount })
+    .then(({ data: { article } }) => article);
+}

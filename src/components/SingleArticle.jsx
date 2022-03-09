@@ -1,29 +1,20 @@
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-import * as api from "../utils/api";
+import useArticle from "../utils/useArticle";
+import alterVote from "../utils/alterVote";
 import formatDate from "../utils/formatDate";
 import Comments from "./Comments";
 import CollapseWrapper from "./CollapseWrapper";
 
 export default function SingleArticle() {
   const { article_id } = useParams();
-
-  const [SelectedArticle, setSelectedArticle] = useState("");
-  const [loading, setLoading] = useState(false);
-
-  
-  useEffect(() => {
-    setLoading(true);
-    api.getArticleByArticleId(article_id).then((article) => {
-      setSelectedArticle(article);
-      setLoading(false);
-    });
-  }, [article_id]);
-
+  const { selectedArticle, setSelectedArticle, loading } =
+    useArticle(article_id);
+  const [count, setCount] = useState(0);
 
   const { title, author, body, comment_count, created_at, topic, votes } =
-    SelectedArticle;
+    selectedArticle;
 
   if (loading) return <div>Loading...</div>;
   return (
@@ -33,11 +24,29 @@ export default function SingleArticle() {
       <dt className="single-article-author">By: {author}</dt>
       <dt className="single-article-date">{formatDate(created_at)}</dt>
       <p className="single-article-body">{body}</p>
-      <i class="fa-solid fa-arrow-up" id="vote-arrow-up"></i>
+      <button
+        onClick={() => {
+          alterVote(setSelectedArticle, article_id, +1);
+          setCount((currentCount) => (currentCount += 1));
+        }}
+        disabled={count === 1}
+        id="vote-arrow-up"
+      >
+        <i className="fa-solid fa-arrow-up"></i>
+      </button>
       <dt className="single-article-votes">Votes: {votes}</dt>
-      <i class="fa-solid fa-arrow-down" id="vote-arrow-down"></i>
+      <button
+        onClick={() => {
+          alterVote(setSelectedArticle, article_id, -1);
+          setCount((currentCount) => (currentCount -= 1));
+        }}
+        disabled={count === -1}
+        id="vote-arrow-down"
+      >
+        <i className="fa-solid fa-arrow-down"></i>
+      </button>
       <CollapseWrapper comment_count={comment_count}>
-        <Comments article_id={article_id}/>
+        <Comments article_id={article_id} />
       </CollapseWrapper>
     </main>
   );
