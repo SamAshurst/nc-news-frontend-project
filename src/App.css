@@ -174,8 +174,8 @@ a {
 }
 .comment-posted,
 .comment-votes {
-  font-size: 0.8em;
-  font-weight: lighter;
+  font-size: 0.85em;
+  font-weight: 200;
 }
 .comment-votes {
   text-align: right;
