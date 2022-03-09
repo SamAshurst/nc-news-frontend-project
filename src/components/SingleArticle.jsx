@@ -33,7 +33,9 @@ export default function SingleArticle() {
       <dt className="single-article-author">By: {author}</dt>
       <dt className="single-article-date">{formatDate(created_at)}</dt>
       <p className="single-article-body">{body}</p>
+      <i class="fa-solid fa-arrow-up" id="vote-arrow-up"></i>
       <dt className="single-article-votes">Votes: {votes}</dt>
+      <i class="fa-solid fa-arrow-down" id="vote-arrow-down"></i>
       <CollapseWrapper comment_count={comment_count}>
         <Comments article_id={article_id}/>
       </CollapseWrapper>
