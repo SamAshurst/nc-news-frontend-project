@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 export default function CollapseWrapper({ children, comment_count }) {
   const [isVisible, setIsVisible] = useState(false);
@@ -9,13 +9,25 @@ export default function CollapseWrapper({ children, comment_count }) {
     });
   }
 
+  const myRef = useRef(null)
+ 
+  function executeScroll  () {
+    myRef.current.scrollIntoView(true)  
+  }
+
+  function onClickInvokeFunctions () {
+    handleClick()
+    executeScroll()
+  }
+
   return (
     <>
-      <button onClick={handleClick} className="comments-button">
+    <div ref={myRef}></div>
+      <button onClick={onClickInvokeFunctions} className="comments-button">
         {isVisible
           ? `Hide Comments: ${comment_count}`
           : `Show Comments: ${comment_count}`}
-      </button>
+      </button>     
       {isVisible && children}
     </>
   );

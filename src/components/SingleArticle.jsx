@@ -20,6 +20,7 @@ export default function SingleArticle() {
     });
   }, [article_id]);
 
+
   const { title, author, body, comment_count, created_at, topic, votes } =
     SelectedArticle;
 
