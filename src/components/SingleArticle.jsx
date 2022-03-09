@@ -12,6 +12,7 @@ export default function SingleArticle() {
   const [SelectedArticle, setSelectedArticle] = useState("");
   const [loading, setLoading] = useState(false);
 
+  
   useEffect(() => {
     setLoading(true);
     api.getArticleByArticleId(article_id).then((article) => {
@@ -19,6 +20,7 @@ export default function SingleArticle() {
       setLoading(false);
     });
   }, [article_id]);
+
 
   const { title, author, body, comment_count, created_at, topic, votes } =
     SelectedArticle;
@@ -33,7 +35,7 @@ export default function SingleArticle() {
       <p className="single-article-body">{body}</p>
       <dt className="single-article-votes">Votes: {votes}</dt>
       <CollapseWrapper comment_count={comment_count}>
-        <Comments article_id={article_id} />
+        <Comments article_id={article_id}/>
       </CollapseWrapper>
     </main>
   );
