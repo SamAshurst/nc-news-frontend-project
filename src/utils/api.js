@@ -37,3 +37,12 @@ export function patchVotes(article_id, voteAmount) {
     .patch(`/articles/${article_id}`, { inc_votes: voteAmount })
     .then(({ data: { article } }) => article);
 }
+
+export function postCommentByArticleId(article_id, username, comment) {
+  return newsApi
+    .post(`/articles/${article_id}/comments`, {
+      username: username,
+      body: comment,
+    })
+    .then(({ data: { comment } }) => comment);
+}

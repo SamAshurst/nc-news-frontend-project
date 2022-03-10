@@ -28,7 +28,7 @@ export default function Comments({ article_id }) {
   if (loading) return <div>Loading...</div>;
 
   return <section className="comment-section">
-    <PostComment />
+    <PostComment article_id={article_id}/>
     {comments.map((comment) => {
     return (
       <ul key={comment.comment_id} className="comment-list">
