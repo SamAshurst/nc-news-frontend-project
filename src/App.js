@@ -44,7 +44,7 @@ function App() {
             />
             <Route
               path="/topics/:topic_slug"
-              element={<SingleTopic articles={articles} loading={loading} />}
+              element={<SingleTopic articles={articles} />}
             />
             <Route path="/articles/:article_id" element={<SingleArticle />} />
           </Routes>
