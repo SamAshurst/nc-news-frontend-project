@@ -163,14 +163,6 @@ a {
 #vote-arrow-down {
   color: rgb(179, 179, 179);
 }
-@media (hover: hover) and (pointer: fine) {
-  .fa-arrow-up:hover {
-    color: #15aa76;
-  }
-  .fa-arrow-down:hover {
-    color: #ff5801;
-  }
-}
 
 #vote-arrow-up:disabled {
   color: #15aa76;
@@ -184,7 +176,7 @@ a {
   margin-left: auto;
   margin-right: 0;
   margin-top: 10px;
-  padding: 0px 20px 20px 0px;
+  padding: 20px 20px 20px 0px;
 }
 .comment-section {
   display: grid;
@@ -212,6 +204,69 @@ a {
 }
 .comment-votes {
   text-align: right;
+}
+form {
+  display: grid;
+}
+textarea {
+  resize: none;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 0px;
+}
+.post-comment-text {
+  color: white;
+  border: 1px solid #4d4b4b;
+  border-radius: 4px;
+  background-color: rgb(37, 37, 37);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: #afacac;
+  font-size: 1em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-bottom: 0px;
+  padding: 10px 10px 50px 10px;
+}
+.post-comment-submit {
+  color: white;
+  margin-left: auto;
+  margin-right: 10px;
+  border: none;
+  background-color: rgb(37, 37, 37);
+  font-size: 1.1em;
+  padding: 5px 10px 20 0px;
+}
+.valid-post-false {
+  border-color: #ff5801;
+}
+.post-length-error {
+  text-align: left;
+  margin-bottom: -21px;
+  padding-top: 1.5px;
+  padding-left: 10px;
+  color: #ff5801;
+}
+.comment-post-delete {
+  display: block;
+  margin-left: auto;
+  margin-right: 0px;
+  padding: 10px 0px 0px 0px;
+  font-size: 1em;
+  color: #ff5801;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .fa-arrow-up:hover {
+    color: #15aa76;
+  }
+  .fa-arrow-down:hover {
+    color: #ff5801;
+  }
 }
 
 @media only screen and (max-width: 600px) {
