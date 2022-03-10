@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import useArticle from "../utils/useArticle";
 import alterVote from "../utils/alterVote";
@@ -11,7 +11,14 @@ export default function SingleArticle() {
   const { article_id } = useParams();
   const { selectedArticle, setSelectedArticle, loading } =
     useArticle(article_id);
-  const [count, setCount] = useState(0);
+
+  const article = "article" + article_id.toString();
+  const voteCount = JSON.parse(localStorage.getItem([article])) || 0;
+  const [count, setCount] = useState(voteCount);
+
+  useEffect(() => {
+    localStorage.setItem([article], JSON.stringify(count));
+  }, [count, article]);
 
   const { title, author, body, comment_count, created_at, topic, votes } =
     selectedArticle;
