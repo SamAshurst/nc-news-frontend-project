@@ -156,11 +156,12 @@ a {
   margin-left: auto;
   margin-right: 20px;
   padding: 0px 20px 0px 0px;
+  font-size: large;
   -webkit-text-stroke: 0.1px;
-  color: #0e704ea6;
+  color: rgb(179, 179, 179);
 }
 #vote-arrow-down {
-  color: #973500c4;
+  color: rgb(179, 179, 179);
 }
 #vote-arrow-up:disabled {
   color: #15aa76;
