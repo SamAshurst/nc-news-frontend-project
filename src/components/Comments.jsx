@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 import formatDate from "../utils/formatDate";
 import * as api from "../utils/api";
+import PostComment from "./PostComment";
 
 export default function Comments({ article_id }) {
   const [comments, setComments] = useState([]);
@@ -26,7 +27,9 @@ export default function Comments({ article_id }) {
 
   if (loading) return <div>Loading...</div>;
 
-  return <section className="comment-section">{comments.map((comment) => {
+  return <section className="comment-section">
+    <PostComment />
+    {comments.map((comment) => {
     return (
       <ul key={comment.comment_id} className="comment-list">
         <p className="comment-body">{comment.body}</p>
