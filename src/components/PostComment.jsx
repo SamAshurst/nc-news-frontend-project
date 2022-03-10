@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import UserContext from "../contexts/UserContext";
 import * as api from "../utils/api";
 import formatDate from "../utils/formatDate";
+import DeleteComment from "./DeleteComment";
 
 export default function PostComment({ article_id }) {
   const { loggedInUser } = useContext(UserContext);
@@ -28,13 +29,7 @@ export default function PostComment({ article_id }) {
   function handleSubmit(e) {
     e.preventDefault();
     const commentBody = e.target.form[0].value;
-    setComment(commentBody);
-  }
-
-  function handleClick(e, comment_id) {
-    e.preventDefault();
-    api.deleteCommentById(comment_id);
-    setPosted(false);
+   return setComment(commentBody);
   }
 
   if (posted) {
@@ -46,14 +41,7 @@ export default function PostComment({ article_id }) {
           {formatDate(postedComment.created_at)}
         </dt>
         <dt className="comment-votes">Votes: {postedComment.votes}</dt>
-        <button
-          className="comment-post-delete"
-          onClick={(e) => {
-            handleClick(e, postedComment.comment_id);
-          }}
-        >
-          Delete post
-        </button>
+        <DeleteComment setPosted={setPosted} comment_id={postedComment.comment_id} />
       </ul>
     );
   }
