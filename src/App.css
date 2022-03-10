@@ -126,6 +126,19 @@ a {
   margin: 0px 0px 0px 0px;
   padding-top: 2px;
 }
+.list__votes {
+  grid-area: date;
+  text-align: right;
+  margin: 0px 0px 0px 0px;
+  padding-top: 2px;
+  font-size: smaller;
+}
+.list__comment-count {
+  grid-area: topic;
+  margin: 0px 0px 0px 0px;
+  text-align: right;
+  font-size: smaller;
+}
 
 .single-article-title {
   padding: 0px 20px 0px 20px;

@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import ArticleList from "./ArticleList";
+import QueryBar from "./QueryBar";
 
 export default function SingleTopic({ articles }) {
   const { topic_slug } = useParams();
@@ -17,14 +18,17 @@ export default function SingleTopic({ articles }) {
     return article.topic === topic;
   });
 
+
   if (loading) return <div>Loading...</div>;
   
-  return (
+  return (<>
+  <QueryBar />
     <main className="SingleTopic__articles">
       {filteredArticles.map((article)=>{
         return <ArticleList key={article.article_id} article={article} />
       })}
       
     </main>
+    </>
   );
 }
