@@ -163,12 +163,15 @@ a {
 #vote-arrow-down {
   color: rgb(179, 179, 179);
 }
-.fa-arrow-up:hover {
-  color: #15aa76;
+@media (hover: hover) and (pointer: fine) {
+  .fa-arrow-up:hover {
+    color: #15aa76;
+  }
+  .fa-arrow-down:hover {
+    color: #ff5801;
+  }
 }
-.fa-arrow-down:hover {
-  color: #ff5801;
-}
+
 #vote-arrow-up:disabled {
   color: #15aa76;
 }
@@ -211,7 +214,7 @@ a {
   text-align: right;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 600px) {
   .main__articles,
   .SingleTopic__articles {
     display: grid;
