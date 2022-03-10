@@ -162,6 +162,12 @@ a {
 #vote-arrow-down {
   color: #973500c4;
 }
+#vote-arrow-up:disabled {
+  color: #15aa76;
+}
+#vote-arrow-down:disabled {
+  color: #ff5801;
+}
 
 .comments-button {
   display: block;
