@@ -24,7 +24,6 @@ export default function Comments({ article_id }) {
   }, [article_id, element]);
 
 
-
   if (loading) return <div>Loading...</div>;
 
   return <section className="comment-section">
@@ -36,7 +35,7 @@ export default function Comments({ article_id }) {
         <dt className="comment-posted">
           Posted by: {comment.author} <br></br>at {formatDate(comment.created_at)}
         </dt>
-        <dt className="comment-votes">Votes: {comment.votes}</dt>
+        <dt className="comment-votes">Votes: {comment.votes}</dt>       
       </ul>
     );
   })}
