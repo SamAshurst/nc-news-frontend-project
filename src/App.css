@@ -163,6 +163,12 @@ a {
 #vote-arrow-down {
   color: rgb(179, 179, 179);
 }
+.fa-arrow-up:hover {
+  color: #15aa76;
+}
+.fa-arrow-down:hover {
+  color: #ff5801;
+}
 #vote-arrow-up:disabled {
   color: #15aa76;
 }
