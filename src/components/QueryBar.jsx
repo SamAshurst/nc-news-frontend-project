@@ -2,20 +2,34 @@ import { Link, useParams } from "react-router-dom";
 export default function QueryBar() {
     const { topic_slug } = useParams();
   return (
-    <main className="QueryBar__main">
-      <span className="QueryBar-main-topics">Sort by</span>
-      <Link to={`/topics/${topic_slug}/?comments=asc`}>
-        <button>comments-asc</button>
+    <main className="QueryBar">
+      <div className="QueryBar-main-topics">Sort by:</div>
+      <section className="QueryBar__section">
+
+      <Link to={`/topics/${topic_slug}/?sort_by=created_at&order=desc`}>
+        <button className="QueryBar-button"><i className="fa-solid fa-arrow-down-wide-short"></i></button>
       </Link>
-      <Link to={`/topics/${topic_slug}/?comments=desc`}>
-        <button>comments-desc</button>
+      <span className="QueryBar-date">Date</span>
+      <Link to={`/topics/${topic_slug}/?sort_by=created_at&order=asc`}>
+        <button className="QueryBar-button"><i className="fa-solid fa-arrow-up-short-wide"></i></button>
       </Link>
-      <Link to={`/topics/${topic_slug}/?date=asc`}>
-        <button>date-asc</button>
+
+      <Link to={`/topics/${topic_slug}/?sort_by=comment_count&order=desc`}>
+        <button className="QueryBar-button"><i className="fa-solid fa-arrow-down-wide-short"></i></button>
       </Link>
-      <Link to={`/topics/${topic_slug}/?date=desc`}>
-        <button>date-desc</button>
+      <span className="QueryBar-comments">Comments</span>
+      <Link to={`/topics/${topic_slug}/?sort_by=comment_count&order=asc`}>
+        <button className="QueryBar-button"><i className="fa-solid fa-arrow-up-short-wide"></i></button>
       </Link>
+
+      <Link to={`/topics/${topic_slug}/?sort_by=votes&order=desc`}>
+        <button className="QueryBar-button"><i className="fa-solid fa-arrow-down-wide-short"></i></button>
+      </Link>
+      <span className="QueryBar-votes">Votes</span>
+      <Link to={`/topics/${topic_slug}/?sort_by=votes&order=asc`}>
+        <button className="QueryBar-button"><i className="fa-solid fa-arrow-up-short-wide"></i></button>
+      </Link>
+      </section>
     </main>
   );
 }

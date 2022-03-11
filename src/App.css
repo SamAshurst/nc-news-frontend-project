@@ -61,6 +61,39 @@ a {
   padding-left: 10px;
 }
 
+.QueryBar-main-topics,
+.QueryBar-date,
+.QueryBar-comments,
+.QueryBar-votes {
+  font-size: 0.9em;
+  padding-left: 4px;
+}
+.QueryBar-main-topics {
+  padding-top: 10px;
+  padding-left: 20px;
+}
+.QueryBar__section {
+  border-bottom: 1px solid #4d4b4b;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  justify-content: center;
+}
+.QueryBar-button:active {
+  color: #1cc58a;
+}
+.QueryBar-button:focus {
+  color: #1cc58a;
+}
+.fa-arrow-up-short-wide {
+  width: 5px;
+  margin-left: -5px;
+  padding-right: 5px;
+}
+.fa-arrow-down-wide-short {
+  width: 5px;
+}
+
 .main__articles,
 .SingleTopic__articles {
   display: grid;
