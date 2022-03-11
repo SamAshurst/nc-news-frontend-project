@@ -29,7 +29,7 @@ export default function PostComment({ article_id }) {
   function handleSubmit(e) {
     e.preventDefault();
     const commentBody = e.target.form[0].value;
-   return setComment(commentBody);
+    return setComment(commentBody);
   }
 
   if (posted) {
@@ -41,7 +41,10 @@ export default function PostComment({ article_id }) {
           {formatDate(postedComment.created_at)}
         </dt>
         <dt className="comment-votes">Votes: {postedComment.votes}</dt>
-        <DeleteComment setPosted={setPosted} comment_id={postedComment.comment_id} />
+        <DeleteComment
+          setPosted={setPosted}
+          comment_id={postedComment.comment_id}
+        />
       </ul>
     );
   }

@@ -11,12 +11,16 @@ export default function CollapseWrapper({ children, comment_count }) {
 
   return (
     <>
-      <button onClick={handleClick} className="comments-button" id="anchor-name">
+      <button
+        onClick={handleClick}
+        className="comments-button"
+        id="anchor-name"
+      >
         {isVisible
           ? `Hide Comments: ${comment_count}`
           : `Show Comments: ${comment_count}`}
-      </button>     
-      {isVisible && children}     
+      </button>
+      {isVisible && children}
     </>
   );
 }

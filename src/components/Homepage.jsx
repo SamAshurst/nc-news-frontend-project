@@ -14,7 +14,12 @@ export default function Homepage() {
     });
   }, []);
 
-  if (loading) return <div className="loading-text">Loading...<i className="fas fa-sync fa-spin"></i></div>;
+  if (loading)
+    return (
+      <div className="loading-text">
+        Loading...<i className="fas fa-sync fa-spin"></i>
+      </div>
+    );
 
   return (
     <main className="main__articles">

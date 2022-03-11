@@ -13,11 +13,11 @@ export default function Comments({ article_id }) {
 
   const element = document.getElementById("anchor-name");
 
-  function removeComment (comment_id) {
-    const newComments = comments.filter(comment => {
-      return comment.comment_id !== comment_id
-    })
-    setComments(newComments)
+  function removeComment(comment_id) {
+    const newComments = comments.filter((comment) => {
+      return comment.comment_id !== comment_id;
+    });
+    setComments(newComments);
   }
 
   useEffect(() => {
@@ -28,11 +28,16 @@ export default function Comments({ article_id }) {
       function executeScroll() {
         element.scrollIntoView({ behavior: "smooth", block: "start" });
       }
-      executeScroll(); 
+      executeScroll();
     });
   }, [article_id, element]);
 
-  if (loading) return <div className="loading-text">Loading...<i className="fas fa-sync fa-spin"></i></div>;
+  if (loading)
+    return (
+      <div className="loading-text">
+        Loading...<i className="fas fa-sync fa-spin"></i>
+      </div>
+    );
 
   return (
     <section className="comment-section">
@@ -46,11 +51,14 @@ export default function Comments({ article_id }) {
               {formatDate(comment.created_at)}
             </dt>
             <dt className="comment-votes">Votes: {comment.votes}</dt>
-            {loggedInUser.username === comment.author ? 
+            {loggedInUser.username === comment.author ? (
               <DeleteComment
                 comment_id={comment.comment_id}
                 removeComment={removeComment}
-              /> : ""}
+              />
+            ) : (
+              ""
+            )}
           </ul>
         );
       })}

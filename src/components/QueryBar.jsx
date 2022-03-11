@@ -31,6 +31,7 @@ export default function QueryBar({ defaultOrder }) {
             <i className="fa-solid fa-arrow-up-short-wide"></i>
           </button>
         </Link>
+
         <Link to={`/topics/${topic_slug}/?sort_by=votes&order=desc`}>
           <button className="QueryBar-button">
             <i className="fa-solid fa-arrow-down-wide-short"></i>

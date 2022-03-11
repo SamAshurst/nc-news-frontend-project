@@ -17,7 +17,7 @@ export default function SingleTopic() {
   useEffect(() => {
     setDefaultOrder(true);
     setTopic(topic_slug);
-    setError(null)
+    setError(null);
     api.getAllArticles().then((articles) => {
       setSingleTopicArticles(articles);
     });
@@ -25,11 +25,15 @@ export default function SingleTopic() {
 
   useEffect(() => {
     const currentParams = Object.fromEntries([...searchParams]);
-    if(Object.keys(currentParams).length=== 0) {
-      setError(null)
+    if (Object.keys(currentParams).length === 0) {
+      setError(null);
     }
-    if ((currentParams.sort_by === undefined || currentParams.order === undefined) && Object.keys(currentParams).length > 0 ){
-      setError({response : {data :{msg :"Invalid query"}}})
+    if (
+      (currentParams.sort_by === undefined ||
+        currentParams.order === undefined) &&
+      Object.keys(currentParams).length > 0
+    ) {
+      setError({ response: { data: { msg: "Invalid query" } } });
     }
     setLoading(true);
     api
@@ -38,7 +42,6 @@ export default function SingleTopic() {
         setSingleTopicArticles(queryArticles);
         setLoading(false);
         setDefaultOrder(false);
-
       })
       .catch((err) => {
         setError(err);
@@ -46,12 +49,11 @@ export default function SingleTopic() {
   }, [searchParams]);
 
   function validTopic(topic_slug) {
-    const valid = ["coding", "cooking", "football"]
-
+    const valid = ["coding", "cooking", "football"];
     if (valid.includes(topic_slug)) {
-      return true
+      return true;
     }
-    return false
+    return false;
   }
 
   const filteredArticles = singleTopicArticles.filter((article) => {
@@ -62,14 +64,20 @@ export default function SingleTopic() {
     return <ErrorPage error={error} />;
   }
 
-  if(error) {
+  if (error) {
     return <ErrorPage error={error} />;
   }
 
   return (
     <>
       <QueryBar defaultOrder={defaultOrder} />
-      {loading ? <div className="loading-text">Loading...<i className="fas fa-sync fa-spin"></i></div> : ""}
+      {loading ? (
+        <div className="loading-text">
+          Loading...<i className="fas fa-sync fa-spin"></i>
+        </div>
+      ) : (
+        ""
+      )}
       <main className="SingleTopic__articles">
         {filteredArticles.map((article) => {
           return <ArticleList key={article.article_id} article={article} />;

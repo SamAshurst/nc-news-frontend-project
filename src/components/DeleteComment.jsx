@@ -11,7 +11,7 @@ export default function DeleteComment({
       setPosted(false);
     }
     if (removeComment !== undefined) {
-    removeComment(comment_id);
+      removeComment(comment_id);
     }
   }
   return (
