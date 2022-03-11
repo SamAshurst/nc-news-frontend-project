@@ -10,6 +10,7 @@ import Nav from "./components/Nav";
 import Homepage from "./components/Homepage";
 import SingleTopic from "./components/SingleTopic";
 import SingleArticle from "./components/SingleArticle";
+import ErrorPage from "./components/ErrorPage";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState("");
@@ -31,6 +32,7 @@ function App() {
             <Route path="/articles" element={<Homepage />} />
             <Route path="/topics/:topic_slug" element={<SingleTopic />} />
             <Route path="/articles/:article_id" element={<SingleArticle />} />
+            <Route path="*" element={<ErrorPage />} />
           </Routes>
         </div>
       </BrowserRouter>

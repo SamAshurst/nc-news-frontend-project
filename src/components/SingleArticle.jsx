@@ -6,10 +6,11 @@ import alterVote from "../utils/alterVote";
 import formatDate from "../utils/formatDate";
 import Comments from "./Comments";
 import CollapseWrapper from "./CollapseWrapper";
+import ErrorPage from "./ErrorPage";
 
 export default function SingleArticle() {
   const { article_id } = useParams();
-  const { selectedArticle, setSelectedArticle, loading } =
+  const { selectedArticle, setSelectedArticle, loading, error } =
     useArticle(article_id);
 
   const article = "article" + article_id.toString();
@@ -23,7 +24,9 @@ export default function SingleArticle() {
   const { title, author, body, comment_count, created_at, topic, votes } =
     selectedArticle;
 
-  if (loading) return <div>Loading...</div>;
+  if(error) return <ErrorPage error={error} />
+
+  if (loading) return <div className="loading-text">Loading...<i className="fas fa-sync fa-spin"></i></div>;
   return (
     <main>
       <h2 className="single-article-title">{title}</h2>
