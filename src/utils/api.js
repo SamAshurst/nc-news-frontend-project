@@ -50,3 +50,9 @@ export function postCommentByArticleId(article_id, username, comment) {
 export function deleteCommentById(comment_id) {
   return newsApi.delete(`/comments/${comment_id}`);
 }
+
+export function getArticleByQuery({ sort_by, order }) {
+  return newsApi
+    .get(`/articles/`, { params: { sort_by, order } })
+    .then(({ data: { articles } }) => articles);
+}
