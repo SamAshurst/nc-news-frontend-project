@@ -314,6 +314,21 @@ textarea {
   color: #ff5801;
 }
 
+.error-page-text {
+  padding: 10px 0px 15px 20px;
+}
+.error-page-link {
+  text-decoration: none;
+  color: white;
+  line-height: 2em;
+  padding: 10px;
+  margin-left: 20px;
+  margin-top: 20px;
+  border: 1px solid #4d4b4b;
+  border-left: 6px solid #15aa76;
+  border-radius: 4px;
+}
+
 @media (hover: hover) and (pointer: fine) {
   .fa-arrow-up:hover {
     color: #15aa76;

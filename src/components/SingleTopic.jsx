@@ -48,8 +48,10 @@ export default function SingleTopic() {
     return article.topic === topic;
   });
 
-  if (error) {
-    return <ErrorPage error={error} />;
+
+
+  if (!filteredArticles.length) {
+    return <ErrorPage />;
   }
 
   return (
