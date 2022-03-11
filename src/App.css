@@ -77,13 +77,17 @@ a {
   border-bottom: 1px solid #4d4b4b;
   display: flex;
   align-items: center;
-  padding-left: 10px;
   justify-content: center;
 }
-.QueryBar-button:active {
+.QueryBar-button-right {
+  margin-right: 15px;
+}
+.QueryBar-button:active,
+.QueryBar-button-right:active {
   color: #1cc58a;
 }
-.QueryBar-button:focus {
+.QueryBar-button:focus,
+.QueryBar-button-right:focus {
   color: #1cc58a;
 }
 #defaultOrder-true {
