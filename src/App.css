@@ -328,6 +328,10 @@ textarea {
   border-left: 6px solid #15aa76;
   border-radius: 4px;
 }
+.loading-text {
+  padding: 10px 0px 0px 20px;
+  text-align: center;
+}
 
 @media (hover: hover) and (pointer: fine) {
   .fa-arrow-up:hover {
