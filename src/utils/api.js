@@ -56,4 +56,3 @@ export function getArticleByQuery({ sort_by, order }) {
     .get(`/articles/`, { params: { sort_by, order } })
     .then(({ data: { articles } }) => articles);
 }
-// ?sort_by=${sort_by}&order=${order}
