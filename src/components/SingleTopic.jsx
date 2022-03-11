@@ -4,16 +4,15 @@ import * as api from "../utils/api";
 import ArticleList from "./ArticleList";
 import QueryBar from "./QueryBar";
 
-export default function SingleTopic({ articles }) {
+export default function SingleTopic() {
   const { topic_slug } = useParams();
   const [searchParams] = useSearchParams();
   const [topic, setTopic] = useState("");
   const [loading, setLoading] = useState(false);
-  const [singleTopicArticles, setSingleTopicArticles] = useState(articles);
+  const [singleTopicArticles, setSingleTopicArticles] = useState([]);
   const [defaultOrder, setDefaultOrder] = useState(true)
 
-  useEffect(() => {
-    
+  useEffect(() => {  
     const currentParams = Object.fromEntries([...searchParams]);
     if (currentParams.sort_by !== undefined && currentParams.order !== undefined){
       setLoading(true);
@@ -31,7 +30,9 @@ export default function SingleTopic({ articles }) {
     setDefaultOrder(true)
     setLoading(true);
     setTopic(topic_slug);
-    setLoading(false);
+    api.getAllArticles().then((articles) => {
+      setSingleTopicArticles(articles)
+      setLoading(false)})
   }, [topic_slug]);
 
   const filteredArticles = singleTopicArticles.filter((article) => {

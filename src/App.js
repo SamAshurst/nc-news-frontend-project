@@ -13,17 +13,10 @@ import SingleArticle from "./components/SingleArticle";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState("");
-  const [articles, setArticles] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     api.getUserByUsername("grumpy19").then((user) => {
       setLoggedInUser(user);
-    });
-    setLoading(true);
-    api.getAllArticles().then((articles) => {
-      setArticles(articles);
-      setLoading(false);
     });
   }, []);
 
@@ -34,18 +27,9 @@ function App() {
           <Title />
           <Nav />
           <Routes>
-            <Route
-              path="/"
-              element={<Homepage articles={articles} loading={loading} />}
-            />
-            <Route
-              path="/articles"
-              element={<Homepage articles={articles} loading={loading} />}
-            />
-            <Route
-              path="/topics/:topic_slug"
-              element={<SingleTopic articles={articles} />}
-            />
+            <Route path="/" element={<Homepage />} />
+            <Route path="/articles" element={<Homepage />} />
+            <Route path="/topics/:topic_slug" element={<SingleTopic />} />
             <Route path="/articles/:article_id" element={<SingleArticle />} />
           </Routes>
         </div>
