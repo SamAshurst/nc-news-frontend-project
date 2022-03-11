@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-export default function QueryBar({defaultOrder}) {
+export default function QueryBar({ defaultOrder }) {
   const { topic_slug } = useParams();
   return (
     <main className="QueryBar">
@@ -7,7 +7,10 @@ export default function QueryBar({defaultOrder}) {
       <section className="QueryBar__section">
         <Link to={`/topics/${topic_slug}/?sort_by=created_at&order=desc`}>
           <button className="QueryBar-button">
-            <i className="fa-solid fa-arrow-down-wide-short" id={`defaultOrder-${defaultOrder}`}></i>
+            <i
+              className="fa-solid fa-arrow-down-wide-short"
+              id={`defaultOrder-${defaultOrder}`}
+            ></i>
           </button>
         </Link>
         <span className="QueryBar-date">Date</span>
@@ -28,7 +31,6 @@ export default function QueryBar({defaultOrder}) {
             <i className="fa-solid fa-arrow-up-short-wide"></i>
           </button>
         </Link>
-
         <Link to={`/topics/${topic_slug}/?sort_by=votes&order=desc`}>
           <button className="QueryBar-button">
             <i className="fa-solid fa-arrow-down-wide-short"></i>

@@ -53,6 +53,7 @@ export function deleteCommentById(comment_id) {
 
 export function getArticleByQuery({ sort_by, order }) {
   return newsApi
-    .get(`/articles/?sort_by=${sort_by}&order=${order}`)
+    .get(`/articles/`, { params: { sort_by, order } })
     .then(({ data: { articles } }) => articles);
 }
+// ?sort_by=${sort_by}&order=${order}

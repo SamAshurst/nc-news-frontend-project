@@ -39,7 +39,7 @@ function App() {
               element={<Homepage articles={articles} loading={loading} />}
             />
             <Route
-              path="/topics"
+              path="/articles"
               element={<Homepage articles={articles} loading={loading} />}
             />
             <Route
