@@ -32,7 +32,7 @@ export default function Comments({ article_id }) {
     });
   }, [article_id, element]);
 
-  if (loading) return <div className="loading-text">Loading...<i class="fas fa-sync fa-spin"></i></div>;
+  if (loading) return <div className="loading-text">Loading...<i className="fas fa-sync fa-spin"></i></div>;
 
   return (
     <section className="comment-section">

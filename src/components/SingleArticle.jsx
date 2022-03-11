@@ -26,7 +26,7 @@ export default function SingleArticle() {
 
   if(error) return <ErrorPage error={error} />
 
-  if (loading) return <div className="loading-text">Loading...<i class="fas fa-sync fa-spin"></i></div>;
+  if (loading) return <div className="loading-text">Loading...<i className="fas fa-sync fa-spin"></i></div>;
   return (
     <main>
       <h2 className="single-article-title">{title}</h2>
