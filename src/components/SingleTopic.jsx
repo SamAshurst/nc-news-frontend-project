@@ -25,6 +25,9 @@ export default function SingleTopic() {
 
   useEffect(() => {
     const currentParams = Object.fromEntries([...searchParams]);
+    if(Object.keys(currentParams).length=== 0) {
+      setError(null)
+    }
     if ((currentParams.sort_by === undefined || currentParams.order === undefined) && Object.keys(currentParams).length > 0 ){
       setError({response : {data :{msg :"Invalid query"}}})
     }
