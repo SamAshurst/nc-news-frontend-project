@@ -85,6 +85,9 @@ a {
 .QueryBar-button:focus {
   color: #1cc58a;
 }
+#defaultOrder-true {
+  color: #1cc58a;
+}
 .fa-arrow-up-short-wide {
   width: 5px;
   margin-left: -5px;

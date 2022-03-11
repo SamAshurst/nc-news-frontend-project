@@ -10,18 +10,25 @@ export default function SingleTopic({ articles }) {
   const [topic, setTopic] = useState("");
   const [loading, setLoading] = useState(false);
   const [singleTopicArticles, setSingleTopicArticles] = useState(articles);
+  const [defaultOrder, setDefaultOrder] = useState(true)
 
   useEffect(() => {
+    
     const currentParams = Object.fromEntries([...searchParams]);
     if (currentParams.sort_by !== undefined && currentParams.order !== undefined){
+      setLoading(true);
     api
-      .getArticleByQuery(currentParams).then((queryArticles) => 
+      .getArticleByQuery(currentParams).then((queryArticles) => {
       setSingleTopicArticles(queryArticles)
+      setLoading(false)
+      setDefaultOrder(false)
+      }
       )
     }
   }, [searchParams]);
 
   useEffect(() => {
+    setDefaultOrder(true)
     setLoading(true);
     setTopic(topic_slug);
     setLoading(false);
@@ -31,11 +38,10 @@ export default function SingleTopic({ articles }) {
     return article.topic === topic;
   });
 
-  if (loading) return <div>Loading...</div>;
-
   return (
     <>
-      <QueryBar />
+      <QueryBar defaultOrder={defaultOrder}/>
+      {loading ? <div>loading</div> : ""}
       <main className="SingleTopic__articles">
         {filteredArticles.map((article) => {
           return <ArticleList key={article.article_id} article={article} />;
