@@ -61,14 +61,15 @@ a {
   padding-left: 10px;
 }
 
-.QueryBar-main-topics,
 .QueryBar-date,
 .QueryBar-comments,
 .QueryBar-votes {
   font-size: 0.9em;
   padding-left: 4px;
+  padding-bottom: 2px;
 }
 .QueryBar-main-topics {
+  font-size: 0.9em;
   padding-top: 10px;
   padding-left: 20px;
 }
