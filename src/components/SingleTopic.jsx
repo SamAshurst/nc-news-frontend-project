@@ -15,8 +15,8 @@ export default function SingleTopic() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    setDefaultOrder(true);
     setTopic(topic_slug);
+    setDefaultOrder(true);
     setError(null);
     api.getAllArticles().then((articles) => {
       setSingleTopicArticles(articles);
@@ -27,6 +27,9 @@ export default function SingleTopic() {
     const currentParams = Object.fromEntries([...searchParams]);
     if (Object.keys(currentParams).length === 0) {
       setError(null);
+      
+    } else {
+      setDefaultOrder(false);
     }
     if (
       (currentParams.sort_by === undefined ||
@@ -41,7 +44,6 @@ export default function SingleTopic() {
       .then((queryArticles) => {
         setSingleTopicArticles(queryArticles);
         setLoading(false);
-        setDefaultOrder(false);
       })
       .catch((err) => {
         setError(err);
