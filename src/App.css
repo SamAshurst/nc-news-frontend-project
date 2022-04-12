@@ -51,6 +51,9 @@ a {
   text-align: left;
   border-right: 1px solid #4d4b4b;
 }
+.header__button:hover {
+  text-shadow: 1px 1px #888888;
+}
 
 .NavBar__main {
   border-bottom: 1px solid #4d4b4b;
@@ -72,15 +75,19 @@ a {
   margin: 10px;
   box-shadow: 0px 0px #888888;
 }
-.topic-coding, .topic-coding:focus {
+.topic-coding:hover, .topic-cooking:hover, .topic-football:hover{
+  border: 1px solid #e3dac9
+}
+.topic-coding, .topic-coding:focus, .topic-coding:hover {
   border-left: 6px solid #ff5801;
 }
-.topic-cooking, .topic-cooking:focus {
+.topic-cooking, .topic-cooking:focus, .topic-cooking:hover {
   border-left: 6px solid #28a5c1;
 }
-.topic-football, .topic-football:focus {
+.topic-football, .topic-football:focus, .topic-football:hover {
   border-left: 6px solid #15aa76;
 }
+
 
 
 .QueryBar-date,
@@ -123,6 +130,10 @@ a {
 .QueryBar-button-right:focus {
   color: #1cc58a;
 }
+.QueryBar-button:hover, .QueryBar-button-right:hover {
+  color: #1cc58a;
+  filter:drop-shadow(0px 0px 0px #888888)
+}
 #defaultOrder-true {
   color: #1cc58a;
 }
@@ -151,8 +162,9 @@ a {
   padding: 0;
   text-align: left;
 }
+
 .article__list {
-  padding: 10px 10px 10px 5px;
+  padding: 10px 10px 10px 5px;  
   margin: 0px 0px 0px 0px;
   border-top: 1px solid #4d4b4b;
   border-bottom: 1px solid #4d4b4b;
@@ -168,6 +180,12 @@ a {
     "topic";
   align-self: stretch;
 }
+.article__list:hover{
+  border-top: 1px solid #e3dac9;
+  border-bottom: 1px solid #e3dac9;
+  border-right: 1px solid #e3dac9;
+  border-radius: 4px;
+}
 .article-cooking {
   border-left: 6px solid #28a5c1;
 }
@@ -177,6 +195,7 @@ a {
 .article-football {
   border-left: 6px solid #15aa76;
 }
+
 
 .list__title {
   grid-area: title;
@@ -273,6 +292,9 @@ a {
 .comments-button:active{
   border: 1px solid #e3dac9;
 }
+.comments-button:hover{
+  border: 1px solid #e3dac9;
+}
 .comment-section {
   display: grid;
   grid-template-columns: 1fr;
@@ -339,7 +361,7 @@ textarea {
   font-size: 1.1em;
   padding: 5px 10px 20 0px;
 }
-.post-comment-submit:active {
+.post-comment-submit:active, .post-comment-submit:hover {
   border: 1px solid #e3dac9;
 } 
 .valid-post-false {
