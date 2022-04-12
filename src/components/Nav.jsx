@@ -4,13 +4,13 @@ export default function Nav() {
     <main className="NavBar__main">
       <span className="NavBar-main-topics">Topics:</span>
       <NavLink to="/topics/coding">
-        <button>Coding</button>
+        <button className="topic-coding">Coding</button>
       </NavLink>
       <NavLink to="/topics/cooking">
-        <button>Cooking</button>
+        <button className="topic-cooking">Cooking</button>
       </NavLink>
       <NavLink to="/topics/football">
-        <button>Football</button>
+        <button className="topic-football">Football</button>
       </NavLink>
     </main>
   );
