@@ -52,7 +52,7 @@ a {
   border-right: 1px solid #4d4b4b;
 }
 .header__button:hover {
-  text-shadow: 1px 1px #888888;
+  cursor: pointer;
 }
 
 .NavBar__main {
@@ -76,13 +76,16 @@ a {
   box-shadow: 0px 0px #888888;
 }
 .topic-coding:hover, .topic-cooking:hover, .topic-football:hover{
-  border: 1px solid #e3dac9
+  border: 1px solid #e3dac9;
+  cursor: pointer;
 }
 .topic-coding, .topic-coding:focus, .topic-coding:hover {
   border-left: 6px solid #ff5801;
+  
 }
 .topic-cooking, .topic-cooking:focus, .topic-cooking:hover {
   border-left: 6px solid #28a5c1;
+  
 }
 .topic-football, .topic-football:focus, .topic-football:hover {
   border-left: 6px solid #15aa76;
@@ -112,19 +115,19 @@ a {
 .QueryBar-button {
   font-size: x-large;
   margin-right: 10px;
-  filter:drop-shadow(1px 1px 0px #616161);  
+   
   -webkit-text-stroke: 0.1px;
 }
 .QueryBar-button-right {
   font-size: x-large;
   margin-right: 10px;
   padding-left: 7px;
-  filter:drop-shadow(1px 1px 0px #616161)
+  
 }
 .QueryBar-button:active,
 .QueryBar-button-right:active {
   color: #1cc58a;
-  filter:drop-shadow(0px 0px 0px #888888)
+  
 }
 .QueryBar-button:focus,
 .QueryBar-button-right:focus {
@@ -132,7 +135,8 @@ a {
 }
 .QueryBar-button:hover, .QueryBar-button-right:hover {
   color: #1cc58a;
-  filter:drop-shadow(0px 0px 0px #888888)
+  filter:drop-shadow(0px 0px 0px #888888);
+  cursor: pointer;
 }
 #defaultOrder-true {
   color: #1cc58a;
@@ -185,6 +189,7 @@ a {
   border-bottom: 1px solid #e3dac9;
   border-right: 1px solid #e3dac9;
   border-radius: 4px;
+  cursor: pointer;
 }
 .article-cooking {
   border-left: 6px solid #28a5c1;
@@ -294,6 +299,7 @@ a {
 }
 .comments-button:hover{
   border: 1px solid #e3dac9;
+  cursor: pointer;
 }
 .comment-section {
   display: grid;
@@ -349,6 +355,9 @@ textarea {
   margin-bottom: 0px;
   padding: 10px 10px 50px 10px;
 }
+.post-comment-text:hover, .post-comment-text:focus{
+  border: 1px solid #fffaf0;
+}
 .post-comment-submit {
   color: #fffaf0;
   margin-left: auto;
@@ -363,6 +372,7 @@ textarea {
 }
 .post-comment-submit:active, .post-comment-submit:hover {
   border: 1px solid #e3dac9;
+  cursor: pointer;
 } 
 .valid-post-false {
   border-color: #ff5801;
@@ -405,9 +415,11 @@ textarea {
 @media (hover: hover) and (pointer: fine) {
   .fa-arrow-up:hover {
     color: #15aa76;
+    cursor: pointer;
   }
   .fa-arrow-down:hover {
     color: #ff5801;
+    cursor: pointer;
   }
 }
 
